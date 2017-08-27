@@ -30,6 +30,6 @@ app.get('*', function (req, res) {
 	});
 });
 
-app.listen(5000, function () {
+app.listen(process.env.PORT, function () {
     console.log('App is running, server is listening on port ', app.get('port'));
 })
