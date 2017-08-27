@@ -1,7 +1,10 @@
 const express = require('express')
 const http = require('http');
 
-const app = express()
+const app = express();
+
+app.set('port', (process.env.PORT || 5000));
+
 // http://api.icndb.com/jokes/random?firstName=Rajni&lastName=Kanth
 app.get('*', function (req, res) {
 
@@ -27,6 +30,6 @@ app.get('*', function (req, res) {
 	});
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+app.listen(5000, function () {
+    console.log('App is running, server is listening on port ', app.get('port'));
 })
